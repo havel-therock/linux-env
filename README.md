@@ -7,7 +7,7 @@ Development environment on Linux
 * Windows 11 - Power Toys app (per user setting)
 * ...
 
-1. <CAPS-LOCK> --> <CTRL>
+1. 'CAPS-LOCK' --> 'CTRL'
 2. ...
 
 # utils
@@ -52,12 +52,12 @@ remember that on WSL you need to install the font in Windows and select it in th
 ```
 sudo apt install tmux
 ```
-Put .tmux.conf into $HOME directory
+Put tmux.conf into $HOME/.config/tmux/ directory
 
 
 # C++
 ```
-sudo apt install clang++ clang g++ gcc clang-format
+sudo apt install clang g++ gcc clang-format
 ```
 Move .clang-format to $HOME directory
 
