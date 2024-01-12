@@ -17,7 +17,7 @@ vim.wo.number = true
 -- show a bar on column 80 and 120
 vim.wo.colorcolumn = "80,120"
 -- set color of colorcolumns
-vim.highlight.create('ColorColumn', {ctermbg=0, guibg=darkgrey}, false)
+vim.highlight.create('ColorColumn', {ctermbg=1, guibg=Red}, false)
 -- tab eq 4 spaces
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
