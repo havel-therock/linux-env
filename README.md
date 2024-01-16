@@ -1,6 +1,8 @@
 # linux-env
 Development environment on Linux
 
+Set background image of terminal with opacity of 15%
+
 # System wide keyboard remaps
 
 * Windows 10 - Sharp Keys app
@@ -57,8 +59,17 @@ Put tmux.conf into $HOME/.config/tmux/ directory
 
 # C++
 ```
-sudo apt install clang g++ gcc clang-format
+sudo apt install clang g++ gcc clang-format cmake lldb
 ```
 Move .clang-format to $HOME directory
+
+# LLDB
+If lldb has a problem with
+ModuleNotFoundError: No module named 'lldb.embedded_interpreter'
+you would need to install additional python package and provide linkage.
+```
+apt install python3-lldb-14
+ln -s /usr/lib/llvm-14/lib/python<eg. version 3.10>/dist-packages/lldb/* /usr/lib/python3/dist-packages/lldb/
+```
 
 # ...
