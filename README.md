@@ -1,5 +1,5 @@
 # linux-env
-Development environment on Linux. Clone this repository under the name *.config*
+Development environment on Linux. Clone this repository under the name *.config/*
 into the $HOME directory.
 
 Set background image of terminal with opacity of 20%
@@ -25,7 +25,7 @@ symlinks with:
 ln -s -T <TARGET_FILE> <SYM_LINK_FILE>
 ```
 for example: 
-create symlink from $HOME/.clang-format to '_clang-format'_ inside git repo.
+create symlink from $HOME/.clang-format to \_clang-format inside git.
 
 Set zsh as a default shell.
 ```
