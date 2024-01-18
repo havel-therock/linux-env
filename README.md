@@ -16,7 +16,7 @@ Set background image of terminal with opacity of 20%
 
 # SetUp
 ```
-sudo apt install git wget python3 neovim zsh tmux clang g++ gcc clang-format cmake lldb
+sudo apt install git wget python3 neovim zsh tmux clang g++ gcc clang-format cmake lldb clang-tidy
 ```
 
 If any file requires specific location outside .config dir then just create
@@ -24,7 +24,7 @@ symlinks with:
 ```
 ln -s -T <TARGET_FILE> <SYM_LINK_FILE>
 ```
-for example: 
+for example:
 create symlink from $HOME/.clang-format to \_clang-format inside git.
 
 Set zsh as a default shell.
@@ -43,7 +43,7 @@ install the font in Windows and select it in the properties of WSL terminal.
 
 # LLDB
 If lldb has a problem with
-ModuleNotFoundError: No module named 'lldb.embedded_interpreter'
+ModuleNotFoundError: No module named 'lldb.embedded\_interpreter'
 you would need to install additional python package and provide linkage.
 ```
 apt install python3-lldb-14
