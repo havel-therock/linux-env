@@ -21,7 +21,7 @@
 -- show a bar on column 80 and 120
 vim.wo.colorcolumn = "80,120"
 -- set color of colorcolumns
-vim.highlight.create('ColorColumn', {ctermbg=1, guibg=Red}, false)
+-- vim.highlight.create('ColorColumn', {ctermbg=1, guibg=Red}, false)
 
 -- :help options
 local options = {
