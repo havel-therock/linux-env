@@ -13,9 +13,6 @@ vim.keymap.set('n', 'N', 'Nzz')
 
 vim.keymap.set('x', '<leader>p', '\"_dP')
 
--- auto closing brackets
--- hate it on other file types than source files
--- vim.keymap.set('i', '{', '{<CR>}<Esc>O')
 
 -- disable
 vim.keymap.set('n', 'Q', '<nop>')

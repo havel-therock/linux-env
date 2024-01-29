@@ -1,19 +1,5 @@
 -- Extensions
 ------------------------------------------------------------------------
--- TODO: @Kacper
--- * treesitter
--- * LSP
--- * fuzzy finder
--- *
-
-
--- Behaviour
-------------------------------------------------------------------------
--- TODO: @Kacper
--- * strip trailing whitespaces function
--- * trigger stripping whitespace function on write
--- * auto trigger clang-format on *.h *.cpp *.c *.hpp files
-
 
 -- Appearance
 ------------------------------------------------------------------------
@@ -70,6 +56,8 @@ vim.opt.shortmess:append "c"
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+-- vim.cmd "set clipboard+=unnamedplus"
 
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"

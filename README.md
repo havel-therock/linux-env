@@ -18,6 +18,7 @@ Set background image of terminal with opacity of 20%
 ```
 sudo apt install git wget python3 neovim zsh tmux clang g++ gcc clang-format cmake lldb clang-tidy
 ninja-build gettext unzip curl
+ripgrep
 ```
 
 If any file requires specific location outside .config dir then just create
