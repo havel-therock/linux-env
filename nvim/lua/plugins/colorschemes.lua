@@ -1,5 +1,6 @@
 return {
 --------------------------------------------------------------------------------
+{
 "rebelot/kanagawa.nvim",
 config = function()
 -- Default options:
@@ -31,6 +32,18 @@ require('kanagawa').setup({
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa")
 end
+},
+
+{
+  'kuznetsss/meadow.nvim',
+  -- priority = 1000,
+  config = function ()
+    require'meadow'.setup({
+        color_saturation = 80, -- contrast (0-100)
+        color_value = 80, -- brightness (0-100)
+    })
+  end
+},
 
 --------------------------------------------------------------------------------
 --    "bluz71/vim-nightfly-colors",

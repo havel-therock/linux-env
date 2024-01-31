@@ -4,11 +4,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = [[%s/\s\+$//e]],
 })
 
--- auto closing brackets in source files
-vim.api.nvim_create_autocmd("BufReadPre", {
-  pattern = { "*.cpp", "*.h", "*.hpp", "*.c" },
-  callback = function(event)
-    vim.keymap.set('i', '{', '{<CR>}<Esc>O', { buffer = event.buf })
-  end,
-})
-
