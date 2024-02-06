@@ -11,6 +11,7 @@ vim.wo.colorcolumn = "80,120"
 
 -- :help options
 local options = {
+    autoindent = true,
     backup = false,                          -- creates a backup file
     -- undodir = os.getenv(HOME) .. /.vim/undodir,  -- undodir & undofile let you undo forever
     -- undofile = true,

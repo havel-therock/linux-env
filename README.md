@@ -4,6 +4,15 @@ into the $HOME directory.
 
 Set background image of terminal with opacity of 20%
 
+
+# WSL
+If on WSL somethinng happens to netowork, and for example git fetch cannot resolve github.com
+then fire up a Powershell and enters these commands:
+```
+$> wsl --shutdown
+$> Get-Service LxssManager | Restart-Service
+```
+
 # System wide keyboard remaps
 
 * Windows 10 - Sharp Keys app
@@ -17,7 +26,7 @@ Set background image of terminal with opacity of 20%
 # SetUp
 ```
 sudo apt install git wget python3 neovim zsh tmux clang g++ gcc clang-format cmake lldb clang-tidy
-ninja-build gettext unzip curl
+ninja-build gettext unzip curl tree
 ripgrep python3-venv
 ```
 
