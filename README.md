@@ -27,7 +27,7 @@ $> Get-Service LxssManager | Restart-Service
 ```
 sudo apt install git wget python3 neovim zsh tmux clang g++ gcc clang-format cmake lldb clang-tidy
 ninja-build gettext unzip curl tree
-ripgrep python3-venv
+ripgrep python3-venv npm
 ```
 
 If any file requires specific location outside .config dir then just create
