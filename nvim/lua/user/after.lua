@@ -20,7 +20,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd', 'cmake', 'lua_ls', 'pylsp', 'dockerls' },
+    ensure_installed = { 'clangd', 'cmake', 'lua_ls', 'pylsp', 'dockerls', 'bashls' },
     handlers = {
         lsp_zero.default_setup,
         clangd = function()
