@@ -9,14 +9,14 @@ sudo apt install git wget python3 zsh tmux clang g++ gcc clang-format cmake lldb
 # create a link for .clang-format
 ln -s -T  ${HOME}/.config/llvm/_clang-format ${HOME}/.clang-format
 
-# set zsh as a default shell
+# set zsh as a default shell (sudo needed for not asking the password again)
 sudo chsh -s /bin/zsh
 
 # install OhMyZsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # set custom direcotry for OhMyZsh
-sed -i 's|# ZSH_CUSTOM=/path.*|ZSH_CUSTOM=${HOME}/.config/shell-settings|' ~/.zshrcV
+sed -i 's|# ZSH_CUSTOM=/path/to/new-custom-folder|ZSH_CUSTOM=${HOME}/.config/shell-settings|' ~/.zshrc
 
 # install neovim
 mkdir -p ${HOME}/apps/
