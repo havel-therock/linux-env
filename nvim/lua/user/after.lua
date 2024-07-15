@@ -1,4 +1,4 @@
--- telescopeafter
+-- telescope after
 --------------------------------------------------------------------------------
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -27,10 +27,41 @@ require('mason-lspconfig').setup({
             require('lspconfig').clangd.setup({
                 -- in here you can add your own
                 -- custom configuration
+                filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "h", "hpp" },
             })
         end,
+        -- bufls = function()
+         --   require('lspconfig
     },
 })
+
+
+
+
+-- lsp server that comes embedded with dart
+require 'lspconfig'.dartls.setup {
+    cmd = { "dart", 'language-server', '--protocol=lsp' },
+}
+
+-- PLS lsp for protocol buffers
+-- first we need to configure our custom server
+local configs = require('lspconfig.configs')
+local util = require('lspconfig.util')
+
+configs.pls = {
+    default_config = {
+        cmd = { 'pls' },
+        filetypes = { 'proto', 'cpp' },
+        root_fir = util.root_pattern('.git'),
+        single_file_support = true,
+        settings = {},
+    }
+}
+---
+-- then we can continue as we do with official servers
+local lspconfig = require('lspconfig')
+lspconfig.pls.setup {}
+
 
 
 ---

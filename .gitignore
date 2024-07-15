@@ -1,2 +1,9 @@
 # lazy.nvim generated
 lazy-lock.json
+
+# linux utils that uses .config paths
+procps/
+htop/
+google-chrome/
+neofetch/
+
