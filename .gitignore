@@ -6,3 +6,5 @@ tmux/plugins/*
 # exception for tpm
 !tmux/plugins/tpm
 
+# auto fetched plugins from tpm
+tmux/plugins/
