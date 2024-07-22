@@ -7,3 +7,5 @@ htop/
 google-chrome/
 neofetch/
 
+# auto fetched plugins from tpm
+tmux/plugins/
