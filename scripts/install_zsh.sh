@@ -26,5 +26,6 @@ echo "##########################################################################
 # install OhMyZsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
-# set custom direcotry for OhMyZsh
-sed -i 's|# ZSH_CUSTOM=/path/to/new-custom-folder|ZSH_CUSTOM=${LINUX_ENV_SETTINGS}|' ~/.zshrc
+# set custom directory for OhMyZsh
+USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+sed -i "s|^.*ZSH_CUSTOM=.*$|ZSH_CUSTOM=${LINUX_ENV_SETTINGS}|" ${USER_HOME}/.zshrc
