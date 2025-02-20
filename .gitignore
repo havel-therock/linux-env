@@ -1,2 +1,8 @@
 # lazy.nvim generated
 lazy-lock.json
+
+# auto downloaded tmux plugins
+tmux/plugins/*
+# exception for tpm
+!tmux/plugins/tpm
+
