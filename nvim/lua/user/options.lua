@@ -50,8 +50,11 @@ local options = {
     wrap = false,                            -- display lines as one long line
     scrolloff = 8,                           -- is one of my fav
     sidescrolloff = 8,
-    guifont = "monospace:h17"               -- the font used in graphical neovim applications
+    guifont = "monospace:h17",               -- the font used in graphical neovim applications
+    list = false,                            -- set list option to make whitespace visible
+    listchars = { tab = '→ ', lead = '·', trail = '·', nbsp = '␣', extends = '>', precedes = '<' } -- Customize listchars to show specific whitespace characters
 }
+
 vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
