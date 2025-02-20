@@ -25,7 +25,7 @@ color=#91E78B
 [battery-poly]
 command=battery-poly/battery-poly
 LABEL=BAT
-interval=60
+interval=180
 
 # Update date every 5 seconds
 [time]

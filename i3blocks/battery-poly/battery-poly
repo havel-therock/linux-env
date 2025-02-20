@@ -173,8 +173,10 @@ def main():
     battery = get_configuration()
     print_status(battery)
     if battery.status == Status.DISCHARGING and battery.percentage < 0.10:
-        cmd = "notify-send BATTERY LOW"
-        subprocess.call(cmd, shell=True)
+        cmd_visual = "notify-send BATTERY LOW"
+        cmd_audio = "paplay /usr/share/sounds/freedesktop/stereo/message-new-instant.oga"
+        subprocess.call(cmd_visual, shell=True)
+        subprocess.call(cmd_audio, shell=True)
 
 
 if __name__ == '__main__':
