@@ -24,8 +24,11 @@ echo "##########################################################################
 
 
 # install OhMyZsh
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # set custom directory for OhMyZsh
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+export ZSH=$USER_HOME/.oh-my-zsh
+
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
+
 sed -i "s|^.*ZSH_CUSTOM=.*$|ZSH_CUSTOM=${LINUX_ENV_SETTINGS}|" ${USER_HOME}/.zshrc
