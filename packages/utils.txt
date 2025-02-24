@@ -38,12 +38,12 @@ python3-venv
 # clang
 clang-format
 clang-tidy
-# cmake
-# g++
-# gcc
-# gdb
-# lldb
-# ninja-build
+cmake
+g++
+gcc
+gdb
+lldb
+ninja-build
 
 #-------------------------------------------------------------------------------
 # Neovim
