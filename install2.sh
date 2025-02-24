@@ -37,7 +37,6 @@ if command -v pip >/dev/null 2>&1; then
     echo "pip is available"
 else
     echo "No common package manager found"
-    exit
 fi
 
 
