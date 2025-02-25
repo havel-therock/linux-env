@@ -28,6 +28,11 @@ RUN su -c "workspace/linux-env/scripts/create_symlinks.sh /home/${MY_USER}/works
 
 RUN chown -R ${MY_USER}: /home/${MY_USER}
 
-RUN ls -la
+WORKDIR /home/${MY_USER}
+
+RUN su -c 'sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended' - ${MY_USER}
+
+RUN sed -i "s|^.*ZSH_CUSTOM=.*$|ZSH_CUSTOM=/home/${MY_USER}/workspace/linux-env|" /home/${MY_USER}/.zshrc
+
 USER kszatan
 CMD ["/bin/sh", "-c", "/bin/zsh"]
