@@ -3,3 +3,4 @@
 
 # battery_check
 alias batt_check="cat /sys/class/power_supply/BAT0/capacity"
+alias tmux='tmux -u'
