@@ -32,7 +32,7 @@ WORKDIR /home/${MY_USER}
 
 RUN su -c 'sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended' - ${MY_USER}
 
-RUN sed -i "s|^.*ZSH_CUSTOM=.*$|ZSH_CUSTOM=/home/${MY_USER}/workspace/linux-env|" /home/${MY_USER}/.zshrc
+RUN sed -i "s|^.*ZSH_CUSTOM=.*$|ZSH_CUSTOM=/home/${MY_USER}/workspace/linux-env/shell-settings|" /home/${MY_USER}/.zshrc
 
 USER kszatan
 CMD ["/bin/sh", "-c", "/bin/zsh"]
