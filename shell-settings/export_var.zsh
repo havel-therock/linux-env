@@ -3,3 +3,5 @@ export EDITOR=nvim
 # export TERM=xterm-256color
 export TERM=screen-256color-bce
 
+export PATH=$HOME/tools/nvim-linux64/bin:$PATH
+
