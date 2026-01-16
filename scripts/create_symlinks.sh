@@ -40,5 +40,5 @@ else
   echo "A file, symlink, or directory with the name ${clang_format_link} already exists."
 fi
 
-chown -R ${CURRENT_USER}: ${USER_HOME}/.config
+# chown -R ${CURRENT_USER}: ${USER_HOME}/.config
 

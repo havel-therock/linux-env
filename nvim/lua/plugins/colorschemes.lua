@@ -32,6 +32,7 @@ require('kanagawa').setup({
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa")
 end
+
 },
 
 {
@@ -46,32 +47,34 @@ end
 },
 
 --------------------------------------------------------------------------------
---    "bluz71/vim-nightfly-colors",
---    config = function()
---        vim.g.nightflyTransparent = true
---        vim.cmd([[colorscheme nightfly]])
---    end,
-
+{
+    "bluz71/vim-nightfly-colors",
+    config = function()
+        vim.g.nightflyTransparent = true
+        -- vim.cmd([[colorscheme nightfly]])
+    end,
+},
 --------------------------------------------------------------------------------
---    'rose-pine/neovim',
---    name = 'rose-pine',
---    lazy = false,
---    priority = 1000,
---    config = function()
---        require('rose-pine').setup({
---            variant = "auto", -- auto, main, moon, or dawn
---            dark_variant = "main", -- main, moon, or dawn
---            dim_inactive_windows = false,
---            extend_background_behind_borders = true,
---            styles = {
---                bold = false,
---                italic = false,
---                transparency = true,
---            },
---        })
---        vim.cmd.colorscheme("rose-pine")
---    end,
---
+{
+    'rose-pine/neovim',
+   name = 'rose-pine',
+   lazy = false,
+   priority = 1000,
+   config = function()
+       require('rose-pine').setup({
+           variant = "auto", -- auto, main, moon, or dawn
+           dark_variant = "main", -- main, moon, or dawn
+           dim_inactive_windows = false,
+           extend_background_behind_borders = true,
+           styles = {
+               bold = false,
+               italic = false,
+               transparency = true,
+           },
+       })
+       -- vim.cmd.colorscheme("rose-pine")
+   end,
+},
 --------------------------------------------------------------------------------
     -- you need lsp set up for this to work :)
 --    'folke/lsp-colors.nvim',

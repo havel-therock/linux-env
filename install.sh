@@ -1,30 +1,37 @@
-#!/bin/sh
-#
-# This script installs all linux environment
+#!/bin/bash
 
-# You should clone this into ${HOME}/.config dir.
+# Exit immediately if a command exits with a non-zero status
+set -eEo pipefail
 
-sudo apt install git wget python3 zsh tmux clang g++ gcc clang-format cmake lldb clang-tidy ninja-build gettext unzip curl tree ripgrep python3-venv npm manpages
+#export glob variables needed for installation script
+# paths etc...
+export USER_HOME_DIR=${HOME}
+export TOOLS_DIR=${USER_HOME_DIR}/tools
+export
 
-# create a link for .clang-format
-ln -s -T  ${HOME}/.config/llvm/_clang-format ${HOME}/.clang-format
+set_up() {
 
-# set zsh as a default shell (sudo needed for not asking the password again)
-sudo chsh -s /bin/zsh
+}
 
-# install OhMyZsh
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+post_install() {
 
-# set custom direcotry for OhMyZsh
-sed -i 's|# ZSH_CUSTOM=/path/to/new-custom-folder|ZSH_CUSTOM=${HOME}/.config/shell-settings|' ~/.zshrc
+}
 
-# install neovim
-mkdir -p ${HOME}/apps/
-cd ${HOME}/apps/
+main() {
 
-wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-rm nvim-linux64.tar.gz
+    set_up()
 
-sudo ln -s -T ${HOME}/apps/nvim-linux64/bin/nvim /usr/local/bin/nvim
+    local tools_to_install=(
+    install-packages.sh
+    install-tmux.sh
+    install-neovim.sh
+    )
 
+    for script in $tools_to_install; do
+        source ./install/$script
+    done
+
+    post_install()
+}
+
+main "$@"

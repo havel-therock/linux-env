@@ -14,27 +14,21 @@ ripgrep
 tree
 unzip
 wget
-btop
-impala
-wiremix
-lazygit
-bluetui
-# there was something for bluetooth connection management too
-# find something for controling external displays
+
 #-------------------------------------------------------------------------------
 # Zsh Shell
 
-zsh
+# zsh
 
 #-------------------------------------------------------------------------------
 # Tmux
 
-tmux
+# tmux
 
 #-------------------------------------------------------------------------------
 # Python
 
-pyenv
+# pyenv
 # python3
 # python3-pip
 # python3-venv
@@ -43,17 +37,17 @@ pyenv
 # C++ / C
 
 # clang
+# lldb
 clang-format
 clang-tidy
 cmake
-g++
-gcc
-gdb
-lldb
-ninja-build
+# g++
+# gcc
+# gdb
+# ninja-build
 
 #-------------------------------------------------------------------------------
 # Neovim
-npm
-neovim
+# npm
+# neovim
 
