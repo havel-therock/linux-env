@@ -1,29 +1,3 @@
--- telescope after
---------------------------local result = os.execute()------------------------------------------------------
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', function()
-    local root = string.gsub(vim.fn.system("git rev-parse --show-toplevel"), "\n", "")
-    if vim.v.shell_error == 0 then
-        builtin.find_files({cwd = root})
-    else
-        builtin.find_files({})
-    end
-end)
-
-
-
-
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>pg', function()
-    local root = string.gsub(vim.fn.system("git rev-parse --show-toplevel"), "\n", "")
-    if vim.v.shell_error == 0 then
-        builtin.grep_string({ search = vim.fn.input("grep > "), cwd = root })
-    else
-        builtin.grep_string({ search = vim.fn.input("grep > ")})
-    end
-end)
-
-
 -- lsp0
 --------------------------------------------------------------------------------
 local lsp_zero = require('lsp-zero')
@@ -34,60 +8,8 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
--- Find the location based on the pip location
-local function get_site_packages_path()
-  local result = ""
-  local cmd = "pip show pip | grep ^Location: | cut -d ' ' -f 2-"
-  local virtualenv = os.getenv("VIRTUAL_ENV")
-  if virtualenv then
-    cmd = "source " .. virtualenv .."/bin/activate; " .. cmd
-  end
-  local handle = io.popen(cmd)
-  if handle then
-    result = handle:read("*a")
-    handle:close()
-    result = result:gsub("%s+$", "")
-  end
-  return result;
-end
-
-
-local util = require 'lspconfig.util'
-local virtualenv2 = os.getenv("VIRTUAL_ENV")
-if not virtualenv2 then
- virtualenv2 = ""
-end
- virtualenv2 = virtualenv2 .. "/bin/python3"
-vim.lsp.config['robotcode'] = {
-  cmd = { 'robotcode', 'language-server' },
-  filetypes = { 'robot', 'txt', 'resource' }, -- match this to your filetype
-  root_dir = util.root_pattern('robot.toml', 'pyproject.toml', 'Pipfile', '.git'),
-  single_file_support = true,
-  get_language_id = function(_, _)
-    return 'robotframework'
-  end,
-  settings = {
-    robot = {
-      python = virtualenv2, -- match the interpreter where SSHLibrary is installed
-      pythonpath = get_site_packages_path(),
-    }
-  }
-}
-
-
--- require("lspconfig").robotframework_ls.setup({
---   settings = {
---     robot = {
--- --      python = {
--- --        executable = "/path/to/your/venv/bin/python"
--- --      },
---       pythonpath = {
---         get_site_packages_path();
---       }
---     }
---   }
--- })
-
+-- this will hit all LSPs
+vim.lsp.inlay_hint.enable(true)
 
 -- lsp server that comes embedded with dart
 vim.lsp.config['dartls'] = {
@@ -113,10 +35,35 @@ vim.lsp.config['dartls'] = {
 -- local lspconfig = require('lspconfig')
 -- lspconfig.pls.setup {}
 
+---@brief
+---
+--- https://robotcode.io
+---
+--- RobotCode - Language Server Protocol implementation for Robot Framework.
+
+---@type vim.lsp.Config
+vim.lsp.config['robotcode'] = {
+    cmd = { 'robotcode', 'language-server' },
+    cmd_env = (function()
+        local venv = os.getenv("VIRTUAL_ENV")
+        if not venv then
+            return nil
+        end
+        local site = vim.fn.glob(venv .. "/lib/python*/site-packages")
+        return { PYTHONPATH = site }
+    end)(),
+    filetypes = { "robot", "resource", "text" },
+    root_markers = { 'robot.toml', 'pyproject.toml', 'Pipfile', '.git' },
+    get_language_id = function(_, _)
+        return 'robotframework'
+    end,
+}
+
+vim.lsp.enable('robotcode')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd', 'cmake', 'lua_ls', 'pylsp', 'dockerls', 'bashls'},
+    ensure_installed = { 'clangd', 'cmake', 'lua_ls', 'pylsp', 'dockerls', 'bashls' },
     handlers = {
         lsp_zero.default_setup,
         clangd = function()
@@ -127,7 +74,7 @@ require('mason-lspconfig').setup({
             }
         end,
         -- bufls = function()
-         --   require('lspconfig
+        --   require('lspconfig
     },
 })
 

@@ -1,7 +1,7 @@
 TODO:
 * remove whle repo from .config directorya nd add as script that just creates symlinks to a place where the repo was installed
 * checkout 'xcape' software and try to remap Caps-Lock to a control when pressed with other keys and to behave as Esc when pressed alone
-
+* checkout b-top, impala, wiremix
 
 
 # linux-env
