@@ -68,3 +68,6 @@ ln -s /usr/lib/llvm-14/lib/python<INSERT_VERSION>/dist-packages/lldb/* /usr/lib/
 ```
 
 # ...
+C++ GUI Libraries:
+FTXUI <-> TUI (terminal graphics)
+fenster <-> minimal grpahics
