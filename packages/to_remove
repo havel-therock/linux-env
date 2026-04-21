@@ -1,0 +1,2 @@
+
+maybe remove service NetworkManager and wpa_supplicant as now they are replaced by iwd + systemd-netowrkd + systemd-resolved

@@ -14,7 +14,13 @@ ripgrep
 tree
 unzip
 wget
-
+btop
+impala
+wiremix
+lazygit
+bluetui
+# there was something for bluetooth connection management too
+# find something for controling external displays
 #-------------------------------------------------------------------------------
 # Zsh Shell
 
