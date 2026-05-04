@@ -1,0 +1,12 @@
+################################################################################
+# List of pacman packages to install. Modify it how you like so the install       #
+# script install for you what you want. Lines starting with hash are ignored.  #
+################################################################################
+
+# Python
+
+pyenv
+python3
+python3-pip
+python3-venv
+

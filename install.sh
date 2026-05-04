@@ -3,35 +3,38 @@
 # Exit immediately if a command exits with a non-zero status
 set -eEo pipefail
 
-#export glob variables needed for installation script
-# paths etc...
-export USER_HOME_DIR=${HOME}
-export TOOLS_DIR=${USER_HOME_DIR}/tools
-export
+#define here all paths to repo direcotires!
+
 
 set_up() {
+    echo "Setup..."
+    source .scripts/export-envvar.sh
+    echo "System is $SYSTEM"
+    .scripts/create-dirs.sh
 
+    # here we can run a script that will give a proper rights to install_scritps so they wont require password but still can
+    # call sudo...
+    # @TODO: Kacper
+    # later
 }
 
 post_install() {
-
+    echo "PostInstall... healthcheck?"
 }
 
 main() {
 
-    set_up()
+    set_up
 
-    local tools_to_install=(
-    install-packages.sh
-    install-tmux.sh
-    install-neovim.sh
-    )
-
+    tools_to_install=$(find install/* -iname "install*")
+    tools_to_install=$(echo $tools_to_install | xargs -n1 | sort | xargs)
     for script in $tools_to_install; do
-        source ./install/$script
+        echo "Run ${script}..."
+        ./$script
+        # source ./install/$script
     done
 
-    post_install()
+    post_install
 }
 
 main "$@"

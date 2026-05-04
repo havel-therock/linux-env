@@ -1,15 +1,16 @@
 TODO:
-* remove whle repo from .config directorya nd add as script that just creates symlinks to a place where the repo was installed
 * checkout 'xcape' software and try to remap Caps-Lock to a control when pressed with other keys and to behave as Esc when pressed alone
-* checkout b-top, impala, wiremix
 
 
 # linux-env
-Development environment on Linux. Clone this repository under the name *.config/*
-into the $HOME directory.
+Development environment on Linux, with some of the tools i like.
+
+
+# Installation
+install.sh script will install all the tools from install/ directory that have a prefix install in their name.
+If you want to omit some of the tools just change the prefix to not match 'install'
 
 Set background image of terminal with opacity of 20%
-
 
 # WSL
 If on WSL somethinng happens to netowork, and for example git fetch cannot resolve github.com
@@ -18,6 +19,8 @@ then fire up a Powershell and enters these commands:
 $> wsl --shutdown
 $> Get-Service LxssManager | Restart-Service
 ```
+Some of the themes in oh-my-zsh use not installed fonts. On WSL you need to
+install the font in Windows and select it in the properties of WSL terminal.
 
 # System wide keyboard remaps
 
@@ -28,34 +31,6 @@ $> Get-Service LxssManager | Restart-Service
 1. 'CAPS-LOCK' --> 'CTRL'
 2. ...
 
-
-# SetUp
-```
-sudo apt install git wget python3 neovim zsh tmux clang g++ gcc clang-format cmake lldb clang-tidy
-ninja-build gettext unzip curl tree
-ripgrep python3-venv npm
-```
-
-If any file requires specific location outside .config dir then just create
-symlinks with:
-```
-ln -s -T <TARGET_FILE> <SYM_LINK_FILE>
-```
-for example:
-create symlink from $HOME/.clang-format to \_clang-format inside git.
-
-Set zsh as a default shell.
-```
-chsh -s /bin/zsh
-```
-
-Then install Oh-My-Zsh
-```
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-```
-
-Some of the themes in oh-my-zsh use not installed fonts. On WSL you need to
-install the font in Windows and select it in the properties of WSL terminal.
 
 
 # LLDB
@@ -70,4 +45,4 @@ ln -s /usr/lib/llvm-14/lib/python<INSERT_VERSION>/dist-packages/lldb/* /usr/lib/
 # ...
 C++ GUI Libraries:
 FTXUI <-> TUI (terminal graphics)
-fenster <-> minimal grpahics
+fenster <-> minimal graphics

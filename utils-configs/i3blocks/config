@@ -1,12 +1,16 @@
-[simple]
-full_text=This is a looong white on red text
-short_text=Short white on red text
-background=#FF0000
-color=#FFFFFF
+[audio]
+full_text=audio
+command=st -e wiremix
+color=#f79494
 
-[click]
-full_text=Click me!
-command=echo "Got clicked with button $button"
+[bluetooth]
+full_text=bluetooth
+command=st -e bluetui
+color=#f79494
+
+[wifi]
+full_text=wifi
+command=st -e impala
 color=#F79494
 
 # Guess the weather hourly

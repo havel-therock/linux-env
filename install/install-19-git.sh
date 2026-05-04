@@ -1,3 +1,9 @@
+#!/bin/bash
+
+set -xeu # debug info, exit on error, treat unset variables as errors
+
+sudo $INSTALL_CMD git
+
 # show trailing whitespaces in git diff
 git config --global diff.wsErrorHighlight all
 

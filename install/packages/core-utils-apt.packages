@@ -8,7 +8,6 @@
 
 curl
 gettext
-git
 manpages
 ripgrep
 tree
@@ -18,12 +17,12 @@ wget
 #-------------------------------------------------------------------------------
 # Zsh Shell
 
-zsh
+# zsh
 
 #-------------------------------------------------------------------------------
 # Tmux
 
-tmux
+# tmux
 
 #-------------------------------------------------------------------------------
 # Python
@@ -38,9 +37,9 @@ tmux
 
 # clang
 # lldb
-clang-format
-clang-tidy
-cmake
+# clang-format
+# clang-tidy
+# cmake
 # g++
 # gcc
 # gdb

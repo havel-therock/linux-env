@@ -212,7 +212,7 @@ exec i3-msg 'exec krita'
 # exec i3-msg 'workspace 4; exec google-chrome; workspace 1'
 
 # Background image. If any troiuble  try using exec_always instead of exec call
-exec --no-startup-id feh --bg-fill /home/kacper/.config/background-img/ApertureLaboratories.jpg
+exec --no-startup-id feh --bg-fill /home/kacper/linux-env/misc/background-img/ApertureLaboratories.jpg
 
 
 

@@ -1,0 +1,15 @@
+################################################################################
+# List of pacman packages to install. Modify it how you like so the install    #
+# script install for you what you want. Lines starting with hash are ignored.  #
+################################################################################
+# C++ / C
+
+clang
+lldb
+clang-format
+clang-tidy
+cmake
+g++
+gcc
+gdb
+ninja-build
