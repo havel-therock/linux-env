@@ -7,12 +7,15 @@
 # General Utilities
 
 curl
+btop
 gettext
 manpages
+npm
 ripgrep
 tree
 unzip
 wget
+wl-clipboard
 
 #-------------------------------------------------------------------------------
 # Zsh Shell

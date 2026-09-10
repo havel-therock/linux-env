@@ -12,9 +12,9 @@ end)
 vim.lsp.inlay_hint.enable(true)
 
 -- lsp server that comes embedded with dart
-vim.lsp.config['dartls'] = {
-    cmd = { "dart", 'language-server', '--protocol=lsp' },
-}
+-- vim.lsp.config['dartls'] = {
+--     cmd = { "dart", 'language-server', '--protocol=lsp' },
+-- }
 
 -- -- PLS lsp for protocol buffers
 -- -- first we need to configure our custom server
@@ -63,7 +63,7 @@ vim.lsp.enable('robotcode')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd', 'cmake', 'lua_ls', 'pylsp', 'dockerls', 'bashls' },
+    ensure_installed = { 'clangd', 'cmake', 'lua_ls', 'pylsp' },
     handlers = {
         lsp_zero.default_setup,
         clangd = function()

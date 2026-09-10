@@ -1,14 +1,36 @@
 return {
+  {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
-    config = function ()
-      local configs = require("nvim-treesitter.configs")
 
-      configs.setup({
-          ensure_installed = {"cpp", "c", "python", "lua", "vim", "vimdoc", "query", "javascript", "html", "dart", "kotlin", "robot"},
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
+    config = function()
+      local ts = require("nvim-treesitter")
+
+      -- Initialize nvim-treesitter
+      ts.setup()
+
+      -- Install the parsers you want
+      ts.install({
+        "cpp",
+        "c",
+        "python",
+        "lua",
+      })
+
+      -- Start Treesitter for supported filetypes
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "c",
+          "cpp",
+          "python",
+          "lua",
+        },
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
     end,
+  },
 }
